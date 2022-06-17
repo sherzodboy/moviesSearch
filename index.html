@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movies App (new release)</title>
+        <link rel="stylesheet" href="css/movies.css" />
+    </head>
+    <body>
+        <!-- * content -->
+        <div class="container">
+            <div class="root">
+                <section class="movies-find">
+                    <header class="search-header">
+                        <h1 class="search-title">Movies App</h1>
+                    </header>
+                    <form class="movies-form" action="#">
+                        <input class="movie-name" type="text" placeholder="Movie name" aria-label="enter movie name" />
+                        <select id="movie-category" name="movie_category" aria-label="choose movie category">
+                            <option value="all">All</option>
+                        </select>
+                        <select id="movie-year-from" name="movie_year_from" aria-label="movie release year interval, start point">
+                            <option value="all">All</option>
+                        </select>
+                        <select id="movie-year-till" name="movie_year_till" aria-label="movie release year interval, end point">
+                            <option value="all">All</option>
+                        </select>
+                        <select id="sort-by" name="sort_by" aria-label="choose by what you want to sort movies">
+                            <option value="default">Default position</option>
+                            <option value="by-alphabetical">By title A-Z</option>
+                            <option value="by-alphabetical-reversed">By title Z-A</option>
+                            <option value="by-decreased-rating">By decreased rating</option>
+                            <option value="by-increased-rating">By increased rating</option>
+                        </select>
+                        <button class="search-button" type="submit">Search</button>
+                    </form>
+                </section>
+                <section class="movies-show">
+                    <div class="movies-result"></div>
+                    <ul class="watchlist__list"></ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- * movie template -->
+        <template id="movie-template">
+            <div class="movie">
+                <span class="movie__rating-box">
+                    <span class="movie__rating"></span>
+                </span>
+                <h3 class="movie__title"></h3>
+                <div class="movie__year"></div>
+                <div class="movie__categories"></div>
+                <a class="movie__trailer" href="https://www.youtube.com?v=" target="_blank">Watch trailer</a>
+                <br />
+                <div class="movie__buttons">
+                    <button class="movie__summary" type="button">Read summary</button>
+                    <button class="movie__watchlist" type="button">Add to watchlist</button>
+                </div>
+            </div>
+        </template>
+
+        <!-- * watchlist template -->
+        <template id="watchlist-item-template">
+            <li class="watchlist__item">
+                <span class="watchlist__title">Lorem ipsum dolor sit amet.</span>
+                <button class="watchlist__remove-button" type="button">X</button>
+            </li>
+        </template>
+
+        <!-- * movie summary modal -->
+        <div class="modal">
+            <div class="modal__dialog">
+                <button class="modal__close">X</button>
+                <div class="modal__body">
+                    <div class="modal__header">
+                        <h3 class="modal__title"></h3>
+                    </div>
+                    <div class="modal__content">
+                        <div class="modal__rating"></div>
+                        <div class="modal__year"></div>
+                        <div class="modal__categories"></div>
+                        <div class="modal__summary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/movies.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/show.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/modal.js"></script>
+        <script src="js/watchlist.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
